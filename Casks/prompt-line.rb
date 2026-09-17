@@ -14,6 +14,8 @@ cask "prompt-line" do
   end
 
   depends_on arch: :arm64
+  depends_on formula: "fd"
+  depends_on formula: "ripgrep"
   depends_on macos: :ventura
 
   app "Prompt Line.app"
@@ -46,7 +48,7 @@ cask "prompt-line" do
     Prompt Line requires Accessibility permission to paste text:
       System Settings > Privacy & Security > Accessibility
 
-    Optional file/symbol search features need fd and ripgrep:
-      brew install fd ripgrep
+    fd and ripgrep (used by file/symbol search) are installed automatically
+    as formula dependencies.
   EOS
 end

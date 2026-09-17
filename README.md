@@ -71,13 +71,11 @@ Prompt Line needs Accessibility permission to paste text into other
 applications. Grant it on first launch:
 **System Settings > Privacy & Security > Accessibility**.
 
-#### Optional dependencies
+#### Dependencies
 
-File search and symbol search features use `fd` and `ripgrep`:
-
-```bash
-brew install fd ripgrep
-```
+`fd` and `ripgrep` (used by file search and symbol search features) are
+declared as formula dependencies in the cask, so `brew install --cask`
+brings them in automatically — no separate step needed.
 
 #### nix-darwin / home-manager
 
