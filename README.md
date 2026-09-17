@@ -46,6 +46,18 @@ If a future Homebrew blocks the removal, run this once manually:
 xattr -dr com.apple.quarantine "/Applications/Prompt Line.app"
 ```
 
+#### Migrating from a manual install
+
+If you already installed Prompt Line from source (`pnpm run install-app`),
+`/Applications/Prompt Line.app` exists and `brew install --cask` will refuse
+to overwrite it. Either remove the existing app first, or let brew adopt it:
+
+```bash
+brew install --cask --adopt nkmr-jp/tap/prompt-line
+```
+
+Your data in `~/.prompt-line` is untouched either way.
+
 #### Accessibility permission
 
 Prompt Line needs Accessibility permission to paste text into other
