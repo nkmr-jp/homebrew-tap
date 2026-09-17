@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  audit:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Tap locally
+        run: |
+          brew tap "$GITHUB_REPOSITORY" "$(pwd)"
+
+      - name: brew style
+        run: brew style "$GITHUB_REPOSITORY"
+
+      # --except=signing: casks here are intentionally self-signed, so the
+      # signature check would always fail. Everything else is still audited.
+      - name: brew audit
+        run: |
+          for cask in Casks/*.rb; do
+            name="$(basename "$cask" .rb)"
+            brew audit --cask --except=signing "$GITHUB_REPOSITORY/$name"
+          done
