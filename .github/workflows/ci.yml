@@ -15,6 +15,11 @@ jobs:
         run: |
           brew tap "$GITHUB_REPOSITORY" "$(pwd)"
 
+      # prompt-line uses postflight_steps, which makes the cask "untrusted";
+      # audit refuses to load it until the tap is explicitly trusted.
+      - name: Trust tap
+        run: brew trust "${GITHUB_REPOSITORY/homebrew-/}"
+
       - name: brew style
         run: brew style "$GITHUB_REPOSITORY"
 
