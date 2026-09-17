@@ -1,6 +1,6 @@
 cask "prompt-line" do
   version "0.40.2"
-  sha256 "99e274cbd873d76e1e5660fb62890ad5ad64502092fe42df1086794236eece99"
+  sha256 "eee972da77d6cc3bcba0711dc6dd9270ab78ec63c46b0b0ec9ef5483bd637335"
 
   url "https://github.com/nkmr-jp/prompt-line/releases/download/prompt-line-v#{version}/Prompt-Line-#{version}-arm64.dmg"
   name "Prompt Line"
@@ -17,6 +17,8 @@ cask "prompt-line" do
   depends_on macos: :ventura
 
   app "Prompt Line.app"
+  binary "#{appdir}/Prompt Line.app/Contents/Resources/prompt-line-plugin.sh",
+         target: "prompt-line-plugin"
 
   # The app is signed with a fixed self-signed certificate ("Prompt Line"),
   # not an Apple Developer ID certificate. Homebrew stamps every download

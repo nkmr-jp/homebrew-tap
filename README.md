@@ -31,6 +31,13 @@ To remove data as well:
 brew uninstall --cask --zap prompt-line
 ```
 
+The install also links the bundled `prompt-line-plugin` CLI (no Node.js
+required — it runs on the app's embedded Electron runtime):
+
+```bash
+prompt-line-plugin install github.com/nkmr-jp/prompt-line-plugins
+```
+
 #### Signing
 
 Prompt Line is signed with a fixed self-signed certificate ("Prompt Line"),
