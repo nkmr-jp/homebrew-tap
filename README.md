@@ -31,11 +31,13 @@ To remove data as well:
 brew uninstall --cask --zap prompt-line
 ```
 
-The install also links the bundled `prompt-line-plugin` CLI (no Node.js
+The install also links the bundled `prompt-line` CLI (no Node.js
 required — it runs on the app's embedded Electron runtime):
 
 ```bash
-prompt-line-plugin install github.com/nkmr-jp/prompt-line-plugins
+prompt-line plugin install github.com/nkmr-jp/prompt-line-plugins
+prompt-line reset-accessibility
+prompt-line migrate-settings
 ```
 
 #### Signing
