@@ -47,7 +47,9 @@ in a `postflight` step after installing to `/Applications`. Because the
 certificate is the same across releases, Accessibility permission granted once
 survives `brew upgrade` reinstalls.
 
-If a future Homebrew blocks the removal, run this once manually:
+The cask uses `postflight_steps`, which requires a recent Homebrew — run
+`brew update` first if your installation is old. If a future Homebrew
+blocks the removal, run this once manually:
 
 ```bash
 xattr -dr com.apple.quarantine "/Applications/Prompt Line.app"
@@ -64,6 +66,11 @@ brew install --cask --adopt nkmr-jp/tap/prompt-line
 ```
 
 Your data in `~/.prompt-line` is untouched either way.
+
+Note that source builds sign the app with a per-machine certificate while
+the cask ships a binary signed with the release certificate, so the TCC
+designated requirement changes on switch — re-grant Accessibility
+permission once after migrating.
 
 #### Accessibility permission
 
