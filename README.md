@@ -86,13 +86,12 @@ applications. Grant it on first launch:
 declared as formula dependencies in the cask, so `brew install --cask`
 brings them in automatically — no separate step needed.
 
-#### nix-darwin / home-manager
+#### Tap trust
 
-```nix
-homebrew.taps = [
-  { name = "nkmr-jp/tap"; trusted = true; }
-];
-homebrew.casks = [ "prompt-line" ];
+The cask runs a `postflight` step (to remove the quarantine attribute),
+so Homebrew refuses to load it from an untrusted tap. If you see
+`Refusing to load cask ... from untrusted tap`, trust the tap once:
+
+```bash
+brew trust nkmr-jp/tap
 ```
-
-`trusted = true` is required because the cask runs a `postflight` step.
