@@ -8,6 +8,8 @@ Personal Homebrew tap for [nkmr-jp](https://github.com/nkmr-jp) projects.
 
 [Prompt Line](https://github.com/nkmr-jp/prompt-line) — a quick input window
 for AI coding agents such as Claude Code, Codex CLI, and Aider.
+Apple Silicon only; Intel Macs should
+[build from source](https://github.com/nkmr-jp/prompt-line#installation) instead.
 
 ```bash
 brew install --cask nkmr-jp/tap/prompt-line
