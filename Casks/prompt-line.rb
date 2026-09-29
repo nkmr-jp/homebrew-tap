@@ -1,6 +1,6 @@
 cask "prompt-line" do
-  version "0.41.5"
-  sha256 "1fb55ced416883691bdbe24c5bd2ada81c0b59f2c5de05e03ad34862e6d19c93"
+  version "0.41.6"
+  sha256 "7430959d15e46994ea8728e9095687b09bb3a02958f8e6d5307a2a52e7fadf70"
 
   url "https://github.com/nkmr-jp/prompt-line/releases/download/prompt-line-v#{version}/Prompt-Line-#{version}-arm64.dmg"
   name "Prompt Line"
